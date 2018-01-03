@@ -34,6 +34,9 @@
 									<a href="{{AppSubURL}}/{{$.ContextUser.Name}}/{{.Name}}">
 										<i class="octicon octicon-{{if .IsFork}}repo-forked{{else if .IsPrivate}}lock{{else if .IsMirror}}repo-clone{{else}}repo{{end}}"></i>
 										<strong class="text truncate item-name">{{.Name}}</strong>
+										<span class="ui right text red">
+										  {{.NumOpenIssues}} <i class="octicon octicon-issue-opened"></i>
+										</span>
 										<span class="ui right text light grey">
 											{{.NumStars}} <i class="octicon octicon-star rear"></i>
 										</span>
@@ -60,6 +63,9 @@
 											<i class="octicon octicon-{{if .IsPrivate}}lock{{else if .IsFork}}repo-forked{{else if .IsMirror}}repo-clone{{else}}repo{{end}}"></i>
 											<span class="text truncate owner-and-repo">
 												<span class="text truncate owner-name">{{.Owner.Name}}</span> / <strong>{{.Name}}</strong>
+											</span>
+											<span class="ui right text red">
+										  	{{.NumOpenIssues}} <i class="octicon octicon-issue-opened"></i>
 											</span>
 											<span class="ui right text light grey">
 												{{.NumStars}} <i class="octicon octicon-star rear"></i>
