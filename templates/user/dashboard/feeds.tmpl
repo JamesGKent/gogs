@@ -84,22 +84,7 @@
 				</div>
 			</div>
 			<div class="ui one wide column">
-				{{
-					color := "grey";
-					switch .GetOpType {
-						case 6: // create issue
-							color = "red"
-						case 10: // comment on issue
-							color = "blue"
-						case 11: // merge pull
-							color = "purple"
-						case 12: // close issue
-						  color = "green"
-						case 13: // reopen issue
-							color = "red"
-					}
-				}}
-				<i class="text {{color}} mega-octicon octicon-{{ActionIcon .GetOpType}}"></i>
+				<i class="text {{.ActionIconColor .GetOpType}} mega-octicon octicon-{{ActionIcon .GetOpType}}"></i>
 			</div>
 		</div>
 		<div class="ui divider"></div>
