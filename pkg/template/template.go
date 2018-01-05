@@ -270,6 +270,41 @@ func ActionIcon(opType int) string {
 	}
 }
 
+func ActionIconColor(optype int) string {
+	switch opType {
+//	case 1, 8: // Create and transfer repository
+//		return ""
+//	case 5: // Commit repository
+//		return ""
+	case 6: // Create issue
+		return "red"
+//	case 7: // New pull request
+//		return ""
+//	case 9: // Push tag
+//		return ""
+	case 10: // Comment issue
+		return "blue"
+	case 11: // Merge pull request
+		return "purple"
+	case 12: // Close issue
+		return "green"
+	case 13: // Reopen issue
+		return "red"
+//	case 14: // close pull request
+//		return ""
+//	case 15: // reopen pull request
+//		return ""
+//	case 16: // Create branch
+//		return ""
+//	case 17, 18: // Delete branch or tag
+//		return ""
+//	case 19: // Fork a repository
+//		return ""
+	default:
+		return "grey"
+	}
+}
+
 func ActionContent2Commits(act Actioner) *models.PushCommits {
 	push := models.NewPushCommits()
 	if err := json.Unmarshal([]byte(act.GetContent()), push); err != nil {
